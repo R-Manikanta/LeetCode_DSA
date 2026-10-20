@@ -12,17 +12,12 @@ class Solution(object):
         
         for i in nums:
             current_length = 1 # current subsequence length
-            prev = i-1
-            hashmap[i] = True
-            while prev in hashmap and not hashmap[prev]:
-                current_length +=1
-                hashmap[prev] = True
-                prev-=1
-            next = i + 1
-            while next in hashmap and not hashmap[next]:
-                current_length +=1
-                hashmap[next] = True
-                next = next + 1
-            
+            if i-1 not in hashmap and not hashmap[i]:
+                hashmap[i] = True
+                next_val = i+1
+                while(next_val in hashmap):
+                    hashmap[next_val] = True
+                    current_length+=1
+                    next_val+=1
             longest_length = max(longest_length,current_length)
         return longest_length
