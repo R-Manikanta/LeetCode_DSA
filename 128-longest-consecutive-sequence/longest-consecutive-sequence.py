@@ -6,7 +6,7 @@ class Solution(object):
         """
         longest_length = 0
         hashset = set(nums) # it removes the duplicates
-        # inserting the elements into the hashmap which it will O(1) time [1,0,2]
+        # inserting the elements into the hashset which it will O(1) time [1,0,2]
         for i in hashset:
             if i-1 not in hashset:
                 current_length=1
