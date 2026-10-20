@@ -4,10 +4,13 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
+        if nums == None or len(nums) == 0:
+            return 0
+        if len(nums) == 1:
+            return 1
         longest_length = 0
-        hashset = set(nums)
-        # inserting the elements into the hashmap which it will O(1) tim
-        
+        hashset = set(nums) # it removes the duplicates
+        # inserting the elements into the hashmap which it will O(1) time [1,0,2]
         for i in hashset:
             if i-1 not in hashset:
                 current_length=1
