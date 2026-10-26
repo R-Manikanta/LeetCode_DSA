@@ -3,7 +3,7 @@ class Solution {
 
         ArrayList<StringBuilder> strings = new ArrayList<>();
         StringBuilder sb = new StringBuilder(s);
-        StringBuilder temp = new StringBuilder(s);
+        StringBuilder temp;
         if (s == null || s.length() == 0){
             return null;
         }
