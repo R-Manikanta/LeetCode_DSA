@@ -6,7 +6,8 @@ class Solution {
         for(int i = 0;i<n;i++){
             for(int j=0;j<n;j++){
                 int total = nums1[i]+nums2[j];
-                sum.put(total,sum.getOrDefault(total,0)+1);
+                //sum.put(total,sum.getOrDefault(total,0)+1);
+                sum.merge(total,1,Integer::sum);
             }
         }
         for(int i=0;i<n;i++){
