@@ -11,9 +11,7 @@ class Solution {
         for(int i=0;i<=n-1;i++){
             for(int j=0;j<=n-1;j++){
                 target = 0-(nums3[i]+nums4[j]);
-                if (sum.containsKey(target)){
-                    count+=sum.getOrDefault(target,0);
-                }
+                count+=sum.getOrDefault(target,0);
             }
         }
         return count;
