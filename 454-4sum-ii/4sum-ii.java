@@ -5,7 +5,8 @@ class Solution {
         int count = 0;
         for(int i = 0;i<n;i++){
             for(int j=0;j<n;j++){
-                sum.put(nums1[i]+nums2[j],sum.getOrDefault(nums1[i]+nums2[j],0)+1);
+                int total = nums1[i]+nums2[j];
+                sum.put(total,sum.getOrDefault(total,0)+1);
             }
         }
         for(int i=0;i<n;i++){
