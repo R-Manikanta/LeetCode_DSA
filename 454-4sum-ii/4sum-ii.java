@@ -3,13 +3,13 @@ class Solution {
         HashMap<Integer,Integer> sum = new HashMap<>();
         int n = nums1.length, target;
         int count = 0;
-        for(int i = 0;i<=n-1;i++){
-            for(int j=0;j<=n-1;j++){
+        for(int i = 0;i<n;i++){
+            for(int j=0;j<n;j++){
                 sum.put(nums1[i]+nums2[j],sum.getOrDefault(nums1[i]+nums2[j],0)+1);
             }
         }
-        for(int i=0;i<=n-1;i++){
-            for(int j=0;j<=n-1;j++){
+        for(int i=0;i<n;i++){
+            for(int j=0;j<n;j++){
                 target = 0-(nums3[i]+nums4[j]);
                 count+=sum.getOrDefault(target,0);
             }
