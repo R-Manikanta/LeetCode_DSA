@@ -3,29 +3,19 @@ class Solution {
         if (numRows == 1 || numRows >=s.length()){
             return s;
         }
-        ArrayList<StringBuilder> rows = new ArrayList<>();
+        
         StringBuilder result = new StringBuilder();
-        int currentRow = 0;
-        int direction = 1;
+        int cycle = 2 * (numRows - 1);
+        int n = s.length();
 
-        for(int i=0;i<numRows;i++){
-            StringBuilder r = new StringBuilder();
-            rows.add(r);
-        }
-
-        for(int i=0;i<s.length();i++){
-            rows.get(currentRow).append(s.charAt(i));
-            if(currentRow==0){
-                direction=1;
+        for(int i = 0; i < numRows; i++){
+            for(int j = 0; j + i < n; j+=cycle){
+                result.append(s.charAt(j+i));
+                int diagonal = j+cycle-i;
+                if (i!=0 && i!= numRows - 1 && diagonal < n){
+                    result.append(s.charAt(diagonal));
+                }
             }
-            else if(currentRow == numRows -1){
-                direction=-1;
-            }
-            currentRow+=direction;
-        }
-
-        for(int i=0;i<numRows;i++){
-            result.append(rows.get(i));
         }
         return result.toString();
     }
